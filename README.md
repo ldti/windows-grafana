@@ -15,8 +15,8 @@ Third, copy the conf directory from the windows zip of grafana to the grafana_co
 copy {extracted zip file path}\* -destination c:\ProgramData\docker\volumes\grafana_conf\_data -Recurse 
 
 Fourth, fix permissions on the volume folders: \
-icacls  C:\ProgramData\docker\volumes\grafana_conf\_data\ /grant "Authenticated Users":(OI)(CI)M \
-icacls  C:\ProgramData\docker\volumes\grafana_data\_data\ /grant "Authenticated Users":(OI)(CI)M 
+icacls  C:\ProgramData\docker\volumes\grafana_conf\\_data\ /grant "Authenticated Users":(OI)(CI)M \
+icacls  C:\ProgramData\docker\volumes\grafana_data\\_data\ /grant "Authenticated Users":(OI)(CI)M 
 
 Fifth, run the container: \
 docker run -d -p 3000:3000 -v grafana_conf:"c:\Program Files\Grafana\conf" -v grafana_data:"c:\Program Files\Grafana\data" --name grafana --restart always  {Image Name}
